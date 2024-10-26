@@ -215,6 +215,34 @@ const addToCart = (product) => {
     </v-row>
   </v-container>
 
+    <v-footer color="grey darken-3">
+      <v-row justify="center">
+        <v-col class="text-center">
+          <p class="white--text">&copy; 2024 JaMonzon. Todos los derechos reservados.</p>
+          <p>
+            <v-btn text href="/politica-privacidad" class="white--text">Política de Privacidad</v-btn>
+            |
+            <v-btn text href="/terminos-servicio" class="white--text">Términos de Servicio</v-btn>
+          </p>
+          <p class="white--text">
+            Síguenos en: 
+            <v-btn text href="https://facebook.com" target="_blank" class="white--text">
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn text href="https://instagram.com" target="_blank" class="white--text">
+              <v-icon>mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn text href="https://twitter.com" target="_blank" class="white--text">
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn text href="https://twitter.com" target="_blank" class="white--text">
+              <v-icon>mdi-whatsapp</v-icon>
+            </v-btn>
+          </p>
+        </v-col>
+      </v-row>
+    </v-footer>
+
 </template>
 
 <style scoped>
