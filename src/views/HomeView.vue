@@ -219,11 +219,7 @@ const addToCart = (product) => {
       <v-row justify="center">
         <v-col class="text-center">
           <p class="white--text">&copy; 2024 JaMonzon. Todos los derechos reservados.</p>
-          <p>
-            <v-btn text href="/politica-privacidad" class="white--text">Política de Privacidad</v-btn>
-            |
-            <v-btn text href="/terminos-servicio" class="white--text">Términos de Servicio</v-btn>
-          </p>
+          
           <p class="white--text">
             Síguenos en: 
             <v-btn text href="https://facebook.com" target="_blank" class="white--text">
