@@ -222,16 +222,8 @@ const addToCart = (product) => {
           
           <p class="white--text">
             Síguenos en: 
-            <v-btn text href="https://facebook.com" target="_blank" class="white--text">
-              <v-icon>mdi-facebook</v-icon>
-            </v-btn>
-            <v-btn text href="https://instagram.com" target="_blank" class="white--text">
-              <v-icon>mdi-instagram</v-icon>
-            </v-btn>
-            <v-btn text href="https://twitter.com" target="_blank" class="white--text">
-              <v-icon>mdi-twitter</v-icon>
-            </v-btn>
-            <v-btn text href="https://twitter.com" target="_blank" class="white--text">
+            
+            <v-btn text rounded href="https://twitter.com" target="_blank" class="white--text">
               <v-icon>mdi-whatsapp</v-icon>
             </v-btn>
           </p>
