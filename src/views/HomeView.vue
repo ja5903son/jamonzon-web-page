@@ -1,18 +1,118 @@
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue';
 
-const cards = reactive([
-  { show: false },
-  { show: false },
-  { show: false },
-  { show: false },
-  { show: false },
-  { show: false }
-])
+const cards = ref([
+  {
+    image: '../img/baconcadet.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/baconcocido.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/cereales.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/fiambrelomo.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/ham.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/milk.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/olives.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/quesocheddar.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/quesogouda.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/quesogoudarounded.jpg',
+    title: 'Top western road trips',
+    subtitle: '1,000 miles of wonder',
+    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    show: false
+  },
+  {
+    image: '../img/quesohollandia.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/quesomozzarella.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
+  {
+    image: '../img/tomato.jpg',
+    title: 'Beautiful Forests',
+    subtitle: 'Explore the wilderness',
+    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    show: false
+  },
 
-function toggle(index) {
-  cards[index].show = !cards[index].show
-}
+]);
+
+const cart = ref([]); // Arreglo para almacenar productos en el carrito
+
+const toggle = (index) => {
+  cards.value[index].show = !cards.value[index].show;
+};
+
+const addToCart = (product) => {
+  cart.value.push(product); // Añade el producto al carrito
+  console.log(`Producto añadido al carrito: ${product.title}`);
+};
 </script>
 
 <template>
@@ -30,16 +130,13 @@ function toggle(index) {
       <v-spacer></v-spacer>
 
       <v-btn icon>
+        <v-icon>mdi-cart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
     </v-toolbar>
     
     <v-container class="fill-height">
@@ -56,7 +153,7 @@ function toggle(index) {
 
   <v-carousel show-arrows="hover">
   <v-carousel-item
-    src="../img/bacon.jpeg"
+    src="../img/istockphoto-2101424528-1024x1024.jpg"
     cover
   ></v-carousel-item>
 
@@ -66,7 +163,7 @@ function toggle(index) {
   ></v-carousel-item>
 
   <v-carousel-item
-    src="../img/queso.webp"
+    src="../img/istockphoto-1490840648-1024x1024.jpg"
     cover
   ></v-carousel-item>
   
@@ -75,12 +172,6 @@ function toggle(index) {
     cover
   ></v-carousel-item>
 </v-carousel>
-
-<v-divider></v-divider>
-<v-divider></v-divider>
-<v-divider></v-divider>
-<br>
-
 
 <v-container>
     <v-row>
@@ -93,25 +184,28 @@ function toggle(index) {
         <v-card class="mx-auto" max-width="344">
           <v-img
             height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+            :src="card.image"
             cover
           ></v-img>
           <v-card-title>
-            Top western road trips
+            {{ card.title }}
           </v-card-title>
           <v-card-subtitle>
-            1,000 miles of wonder
+            {{ card.subtitle }}
           </v-card-subtitle>
           <v-card-actions>
             <v-btn color="orange-lighten-2" text="Explore"></v-btn>
             <v-spacer></v-spacer>
             <v-btn :icon="card.show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="toggle(index)"></v-btn>
+            <v-btn icon @click="addToCart(card)">
+              <v-icon>mdi-cart</v-icon>
+            </v-btn>
           </v-card-actions>
           <v-expand-transition>
             <div v-show="card.show">
               <v-divider></v-divider>
               <v-card-text>
-                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                {{ card.text }}
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -120,7 +214,8 @@ function toggle(index) {
     </v-row>
   </v-container>
 
-  <br>
-  <br>
-
 </template>
+
+<style scoped>
+
+</style>
