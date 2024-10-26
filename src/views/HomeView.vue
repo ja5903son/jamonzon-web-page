@@ -4,99 +4,92 @@ import { ref } from 'vue';
 const cards = ref([
   {
     image: '../img/baconcadet.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
+    title: 'Bacon Cadet',
+    subtitle: '$XXX',
     text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
     show: false
   },
   {
     image: '../img/baconcocido.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Bacon cocido Sant Dalmai',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/cereales.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
+    title: 'Cereales',
+    subtitle: '$XXX',
     text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
     show: false
   },
   {
     image: '../img/fiambrelomo.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Fiambre de lomo adobado Sant Dalmai',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
-    image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
-    show: false
-  },
-  {
     image: '../img/ham.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Jamon Sant Dalmai',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/milk.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
+    title: 'Leche entera en polvo',
+    subtitle: '$XXX',
     text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
     show: false
   },
   {
     image: '../img/olives.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Aceitunas',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/quesocheddar.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
+    title: 'Queso Cheddar',
+    subtitle: '$XXX',
     text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
     show: false
   },
   {
     image: '../img/quesogouda.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Queso Gouda',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/quesogoudarounded.jpg',
-    title: 'Top western road trips',
-    subtitle: '1,000 miles of wonder',
+    title: 'Queso Gouda',
+    subtitle: '$XXX',
     text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
     show: false
   },
   {
     image: '../img/quesohollandia.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Queso Hollandia',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/quesomozzarella.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Queso Mozzarella',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
   {
     image: '../img/tomato.jpg',
-    title: 'Beautiful Forests',
-    subtitle: 'Explore the wilderness',
+    title: 'Pasta de Tomate',
+    subtitle: '$XXX',
     text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
     show: false
   },
@@ -153,7 +146,7 @@ const addToCart = (product) => {
 
   <v-carousel show-arrows="hover">
   <v-carousel-item
-    src="../img/istockphoto-2101424528-1024x1024.jpg"
+    src="../img/bacon-4342494_1920.jpg"
     cover
   ></v-carousel-item>
 
@@ -163,15 +156,23 @@ const addToCart = (product) => {
   ></v-carousel-item>
 
   <v-carousel-item
-    src="../img/istockphoto-1490840648-1024x1024.jpg"
+    src="../img/cheese-4016647_1920.jpg"
     cover
   ></v-carousel-item>
   
   <v-carousel-item
-    src="../img/salsas.jpg"
+    src="../img/glasses-6989171_1920.jpg"
     cover
   ></v-carousel-item>
 </v-carousel>
+
+<v-container>
+    <v-row align="center" justify="center">
+      <v-col class="text-center">
+        <h1>Productos en Stock</h1>
+      </v-col>
+    </v-row>
+  </v-container>
 
 <v-container>
     <v-row>
