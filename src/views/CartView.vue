@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>Carrito de Compras</h1>
+    <h1 class="compras">Carrito de Compras</h1>
     <v-list>
       <v-list-item-group>
         <v-list-item
@@ -14,7 +14,7 @@
         </v-list-item>
       </v-list-item-group>
     </v-list>
-    <v-btn @click="goBack">Volver</v-btn>
+    <v-btn @click="goBack" class="back">Volver</v-btn>
   </v-container>
 </template>
 
