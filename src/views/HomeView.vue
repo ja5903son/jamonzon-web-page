@@ -223,8 +223,11 @@ const addToCart = (product) => {
           <p class="white--text">
             Síguenos en: 
             
-            <v-btn text rounded href="https://twitter.com" target="_blank" class="white--text">
+            <v-btn text rounded href="https://wa.me/qr/MVONVZX53A3FJ1" target="_blank" class="white--text">
               <v-icon>mdi-whatsapp</v-icon>
+            </v-btn>
+            <v-btn text rounded href="https://t.me/JonathanMH03" target="_blank" class="white--text">
+              <v-icon>mdi-send-variant-outline</v-icon>
             </v-btn>
           </p>
         </v-col>
