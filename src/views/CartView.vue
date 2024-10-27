@@ -9,7 +9,7 @@
         >
           <v-list-item-content>
             <v-list-item-title>{{ product.title }}</v-list-item-title>
-            <v-list-item-subtitle>${{ product.price }}</v-list-item-subtitle>
+            <v-list-item-subtitle>{{ product.subtitle }}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>

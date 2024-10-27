@@ -15,7 +15,7 @@ let intervalId = null;
 const start = () => {
   intervalId = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % items.length;
-  }, 3000); // Cambia la imagen cada 3 segundos
+  }, 3000);
 };
 
 const pause = () => {
