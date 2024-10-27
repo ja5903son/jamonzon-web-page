@@ -1,112 +1,144 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
+
+const items = [
+  { src: '../img/bacon-4342494_1920.jpg' },
+  { src: '../img/jamon.jpg' },
+  { src: '../img/cheese-4016647_1920.jpg' },
+  { src: '../img/glasses-6989171_1920.jpg' },
+];
+
+const currentIndex = ref(0);
+let intervalId = null;
+
+const start = () => {
+  intervalId = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % items.length;
+  }, 3000); // Cambia la imagen cada 3 segundos
+};
+
+const pause = () => {
+  clearInterval(intervalId);
+};
+
+onMounted(() => {
+  start();
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
+});
 
 
 const cards = ref([
   {
     image: '../img/baconcadet.jpg',
     title: 'Bacon Cadet',
-    subtitle: '$XXX',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    subtitle: '$7000',
+    text: "Caja de bacon de 5kg",
     show: false
   },
   {
     image: '../img/baconcocido.jpg',
     title: 'Bacon cocido Sant Dalmai',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$7000',
+    text: "Bacon cocido de 4kg",
     show: false
   },
   {
     image: '../img/cereales.jpg',
     title: 'Cereales',
-    subtitle: '$XXX',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    subtitle: '$800 c/u',
+    text: "Cereales de 1kg c/u",
     show: false
   },
   {
     image: '../img/fiambrelomo.jpg',
     title: 'Fiambre de lomo adobado Sant Dalmai',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$5000',
+    text: "Fiambre de lomo adobado 2.57kg",
     show: false
   },
   {
     image: '../img/ham.jpg',
     title: 'Jamon Sant Dalmai',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$12000',
+    text: "Peso: 16lb",
     show: false
   },
   {
     image: '../img/milk.jpg',
     title: 'Leche entera en polvo',
-    subtitle: '$XXX',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    subtitle: '$2300',
+    text: "Bolsa de leche en polvo de 1kg",
     show: false
   },
   {
     image: '../img/olives.jpg',
     title: 'Aceitunas',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$4000',
+    text: "Aceitunas lata de 4kg",
     show: false
   },
   {
     image: '../img/quesocheddar.jpg',
     title: 'Queso Cheddar',
-    subtitle: '$XXX',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    subtitle: '$6000',
+    text: "Queso de 3kg",
     show: false
   },
   {
     image: '../img/quesogouda.jpg',
     title: 'Queso Gouda',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$8000',
+    text: "Queso de 3kg",
     show: false
   },
   {
     image: '../img/quesogoudarounded.jpg',
     title: 'Queso Gouda',
-    subtitle: '$XXX',
-    text: "I'm a thing. But, like most politicians, he promised more than he could deliver.",
+    subtitle: '$8000',
+    text: "Queso de 4kg",
     show: false
   },
   {
     image: '../img/quesohollandia.jpg',
     title: 'Queso Hollandia',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$7500',
+    text: "Queso de 3.5kg",
     show: false
   },
   {
     image: '../img/quesomozzarella.jpg',
     title: 'Queso Mozzarella',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$5500',
+    text: "Queso de 3kg",
     show: false
   },
   {
     image: '../img/tomato.jpg',
     title: 'Pasta de Tomate',
-    subtitle: '$XXX',
-    text: "Discover the beauty of nature and enjoy the tranquility of the forests.",
+    subtitle: '$3000',
+    text: "Lata de Pasta de Tomate de 3kg",
     show: false
   },
 
 ]);
 
-const cart = ref([]); // Arreglo para almacenar productos en el carrito
-
-
 const toggle = (index) => {
   cards.value[index].show = !cards.value[index].show;
 };
 
+const cart = ref([]);
+const router = useRouter();
+
 const addToCart = (product) => {
-  cart.value.push(product); // Añade el producto al carrito
+  cart.value.push(product);
   console.log(`Producto añadido al carrito: ${product.title}`);
+};
+const goToCart = () => {
+  router.push({ path: '/cart', query: { cart: JSON.stringify(cart.value) } });
 };
 </script>
 
@@ -125,7 +157,7 @@ const addToCart = (product) => {
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn icon @click="goToCart">
         <v-icon>mdi-cart</v-icon>
       </v-btn>
 
@@ -147,27 +179,14 @@ const addToCart = (product) => {
 
   </v-card>
 
-  <v-carousel show-arrows="hover">
-  <v-carousel-item
-    src="../img/bacon-4342494_1920.jpg"
-    cover
-  ></v-carousel-item>
-
-  <v-carousel-item
-    src="../img/jamon.jpg"
-    cover
-  ></v-carousel-item>
-
-  <v-carousel-item
-    src="../img/cheese-4016647_1920.jpg"
-    cover
-  ></v-carousel-item>
-  
-  <v-carousel-item
-    src="../img/glasses-6989171_1920.jpg"
-    cover
-  ></v-carousel-item>
-</v-carousel>
+  <v-carousel v-model="currentIndex" show-arrows="hover" @mouseenter="pause" @mouseleave="start">
+    <v-carousel-item
+      v-for="(item, index) in items"
+      :key="index"
+      :src="item.src"
+      cover
+    ></v-carousel-item>
+  </v-carousel>
 
 <v-container>
     <v-row align ="center" justify="center">
@@ -198,7 +217,7 @@ const addToCart = (product) => {
             {{ card.subtitle }}
           </v-card-subtitle>
           <v-card-actions>
-            <v-btn color="orange-lighten-2" text="Explore"></v-btn>
+            <v-btn color="gray" text="Datos del Producto"></v-btn>
             <v-spacer></v-spacer>
             <v-btn :icon="card.show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="toggle(index)"></v-btn>
             <v-btn icon @click="addToCart(card)">
