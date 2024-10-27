@@ -217,7 +217,7 @@ const goToCart = () => {
             {{ card.subtitle }}
           </v-card-subtitle>
           <v-card-actions>
-            <v-btn color="gray" text="Datos del Producto"></v-btn>
+            <v-btn color="gray" text="Info"></v-btn>
             <v-spacer></v-spacer>
             <v-btn :icon="card.show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="toggle(index)"></v-btn>
             <v-btn icon @click="addToCart(card)">
