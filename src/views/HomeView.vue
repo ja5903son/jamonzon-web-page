@@ -163,9 +163,12 @@ const toggle = (index) => {
 
 const cart = ref([]);
 const router = useRouter();
+const snackbar = ref(false);
+const message = ref('¡Producto agregado al carrito!');
 
 const addToCart = (product) => {
   cart.value.push(product);
+  snackbar.value = true;
   console.log(`Producto añadido al carrito: ${product.title}`);
 };
 const goToCart = () => {
@@ -295,6 +298,12 @@ const goToCart = () => {
         </v-col>
       </v-row>
     </footer>
+    <v-snackbar v-model="snackbar" :timeout="3000" top>
+      {{ message }}
+      <template #action="{ attrs }">
+        <v-btn text v-bind="attrs" @click="snackbar = false">Cerrar</v-btn>
+      </template>
+    </v-snackbar>
 </v-main>
 
 </template>
