@@ -1,4 +1,3 @@
-<!-- CartView.vue -->
 <template>
   <v-container>
     <h1>Carrito de Compras</h1>
@@ -32,6 +31,6 @@ const props = defineProps(['cart']);
 const router = useRouter();
 
 const goBack = () => {
-  router.push('/'); // Cambia la ruta según tu configuración
+  router.push('/');
 };
 </script>
