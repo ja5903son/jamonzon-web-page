@@ -113,7 +113,7 @@ const addToCart = (product) => {
 <template>
 <v-main id="main-content">
   <v-card
-    color="grey-lighten-4"
+    color="#e5e5e5"
     height="200px"
     rounded="0"
     flat
@@ -172,7 +172,7 @@ const addToCart = (product) => {
 <v-container>
     <v-row align ="center" justify="center">
       <v-col class="text-center">
-        <h1>Productos en Stock</h1>
+        <h1 class="stock">Productos en Stock</h1>
       </v-col>
     </v-row>
   </v-container>
@@ -216,28 +216,26 @@ const addToCart = (product) => {
         </v-card>
       </v-col>
     </v-row>
-   
-      
   </v-container>
 
-    <v-footer color="grey darken-3">
+    <footer >
       <v-row justify="center">
         <v-col class="text-center">
           <p class="white--text">&copy; 2024 JaMonzon. Todos los derechos reservados.</p>
           
           <p class="white--text">
-            Síguenos en: 
+            Contactenos en: 
             
-            <v-btn text rounded href="https://wa.me/qr/MVONVZX53A3FJ1" target="_blank" class="white--text">
+            <v-btn text rounded href="https://wa.me/qr/MVONVZX53A3FJ1" target="_blank" class="white--text" id="whatsapp">
               <v-icon>mdi-whatsapp</v-icon>
             </v-btn>
-            <v-btn text rounded href="https://t.me/JonathanMH03" target="_blank" class="white--text">
+            <v-btn text rounded href="https://t.me/JonathanMH03" target="_blank" class="white--text" id="telegram">
               <v-icon>mdi-send-variant-outline</v-icon>
             </v-btn>
           </p>
         </v-col>
       </v-row>
-    </v-footer>
+    </footer>
 </v-main>
 
 </template>

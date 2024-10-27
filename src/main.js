@@ -1,5 +1,5 @@
 import router from './router'
-
+import '../styles/style.css'
 import { createApp } from 'vue'
 
 // Vuetify
