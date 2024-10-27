@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+
 
 const cards = ref([
   {
@@ -98,6 +99,7 @@ const cards = ref([
 
 const cart = ref([]); // Arreglo para almacenar productos en el carrito
 
+
 const toggle = (index) => {
   cards.value[index].show = !cards.value[index].show;
 };
@@ -109,6 +111,7 @@ const addToCart = (product) => {
 </script>
 
 <template>
+<v-main id="main-content">
   <v-card
     color="grey-lighten-4"
     height="200px"
@@ -131,7 +134,7 @@ const addToCart = (product) => {
       </v-btn>
 
     </v-toolbar>
-    
+
     <v-container class="fill-height">
     <v-row align="center" justify="center">
       <v-col class="text-center">
@@ -167,7 +170,7 @@ const addToCart = (product) => {
 </v-carousel>
 
 <v-container>
-    <v-row align="center" justify="center">
+    <v-row align ="center" justify="center">
       <v-col class="text-center">
         <h1>Productos en Stock</h1>
       </v-col>
@@ -213,6 +216,8 @@ const addToCart = (product) => {
         </v-card>
       </v-col>
     </v-row>
+   
+      
   </v-container>
 
     <v-footer color="grey darken-3">
@@ -233,9 +238,7 @@ const addToCart = (product) => {
         </v-col>
       </v-row>
     </v-footer>
+</v-main>
 
 </template>
 
-<style scoped>
-
-</style>
