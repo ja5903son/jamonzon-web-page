@@ -16,8 +16,6 @@ footer{
     border-radius: 16px;
     margin-bottom: 20px;
 }
-.delete{
-    background-color: rgb(197, 3, 3);
-    padding: 4px;
-    border-radius: 10px;
+.back{
+    margin: 10px;
 }

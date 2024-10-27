@@ -12,14 +12,15 @@
             <v-list-item-title>{{ product.title }}</v-list-item-title>
             <v-list-item-subtitle>{{ product.subtitle }}</v-list-item-subtitle>
           </v-list-item-content>
-          <v-btn rounded="xl" size="x-small" color="red darken-3" elevation="0">
+          <v-btn rounded="xl" size="x-small" color="red darken-3" elevation="0" @click="deleteItem(index)">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-list-item>
       </v-list-item-group>
     </v-list>
     <div class="d-flex justify-end mt-4">
-      <v-btn @click="goBack" class="back">Volver</v-btn>
+      <v-btn rounded="lg" color="grey" @click="goBack" class="back">Volver</v-btn>
+      <v-btn rounded="lg" color="green"   class="back" >Comprar</v-btn>
     </div>
   </v-container>
 </template>
@@ -38,5 +39,9 @@ const router = useRouter();
 
 const goBack = () => {
   router.push('/');
+};
+const deleteItem = (index) => {
+  cart.value.splice(index, 1); 
+  
 };
 </script>
