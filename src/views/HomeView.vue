@@ -1,6 +1,9 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import { useRouter } from 'vue-router';
+
+const searchVisible = ref(false);
+const searchQuery = ref('');
 
 const items = [
   { src: '../img/bacon-4342494_1920.jpg' },
@@ -126,6 +129,34 @@ const cards = ref([
 
 ]);
 
+const filteredCards = computed(() => {
+  if (!searchQuery.value) return cards.value;
+  return cards.value.filter(card => 
+    card.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+  );
+});
+
+const toggleSearch = () => {
+  searchVisible.value = !searchVisible.value;
+  if (!searchVisible.value) {
+    clearSearch();
+  }
+};
+
+const performSearch = () => {
+  
+};
+
+const clearSearch = () => {
+  searchQuery.value = '';
+};
+
+const highlightText = (text) => {
+  if (!searchQuery.value) return text;
+  const regex = new RegExp(`(${searchQuery.value})`, 'gi');
+  return text.replace(regex, '<mark>$1</mark>');
+};
+
 const toggle = (index) => {
   cards.value[index].show = !cards.value[index].show;
 };
@@ -151,22 +182,31 @@ const goToCart = () => {
     flat
   >
     <v-toolbar density="compact">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>JaMonzon ®</v-toolbar-title>
+    <v-toolbar-title>JaMonzon ®</v-toolbar-title>
 
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
 
-      <v-btn icon @click="goToCart">
-        <v-icon>mdi-cart</v-icon>
-      </v-btn>
+    <v-btn icon @click="goToCart">
+      <v-icon>mdi-cart</v-icon>
+    </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+    <v-btn icon @click="toggleSearch">
+      <v-icon>mdi-magnify</v-icon>
+    </v-btn>
 
-    </v-toolbar>
-
+    <v-text-field
+      v-if="searchVisible"
+      v-model="searchQuery"
+      label="Buscar..."
+      @input="performSearch"
+      class="search-field"
+      append-icon="mdi-close-circle"
+      @click:append="clearSearch"
+    ></v-text-field>
+  </v-toolbar>
+  
     <v-container class="fill-height">
     <v-row align="center" justify="center">
       <v-col class="text-center">
@@ -199,7 +239,7 @@ const goToCart = () => {
 <v-container>
     <v-row>
       <v-col
-        v-for="(card, index) in cards"
+        v-for="(card, index) in filteredCards"
         :key="index"
         cols="12"
         md="4"
@@ -211,7 +251,7 @@ const goToCart = () => {
             cover
           ></v-img>
           <v-card-title>
-            {{ card.title }}
+            <span v-html="highlightText(card.title)"></span>
           </v-card-title>
           <v-card-subtitle>
             {{ card.subtitle }}
@@ -259,3 +299,8 @@ const goToCart = () => {
 
 </template>
 
+<style scoped>
+.search-field {
+  margin-left: 10px;
+}
+</style>
