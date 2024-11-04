@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base:'https://ja5903son.github.io/jamonzon-web-page',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
