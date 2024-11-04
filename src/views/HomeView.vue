@@ -6,10 +6,10 @@ const searchVisible = ref(false);
 const searchQuery = ref('');
 
 const items = [
-  { src: '/ja5903son.github.io/jamonzon-web-page/../public/bacon-4342494_1920.jpg' },
-  { src: '/ja5903son.github.io/jamonzon-web-page/../public/jamon.jpg' },
-  { src: '/ja5903son.github.io/jamonzon-web-page/../public/cheese-4016647_1920.jpg' },
-  { src: '/ja5903son.github.io/jamonzon-web-page/../public/glasses-6989171_1920.jpg' },
+  { src: '/jamonzon-web-page/../public/bacon-4342494_1920.jpg' },
+  { src: '/jamonzon-web-page/../public/jamon.jpg' },
+  { src: '/jamonzon-web-page/../public/cheese-4016647_1920.jpg' },
+  { src: '/jamonzon-web-page/../public/glasses-6989171_1920.jpg' },
 ];
 
 const currentIndex = ref(0);
@@ -36,91 +36,91 @@ onBeforeUnmount(() => {
 
 const cards = ref([
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/baconcadet.jpg',
+    image: '/jamonzon-web-page/../public/baconcadet.jpg',
     title: 'Bacon Cadet',
     subtitle: '$7000',
     text: "Caja de bacon de 5kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/baconcocido.jpg',
+    image: '/jamonzon-web-page/../public/baconcocido.jpg',
     title: 'Bacon cocido Sant Dalmai',
     subtitle: '$7000',
     text: "Bacon cocido de 4kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/cereales.jpg',
+    image: '/jamonzon-web-page/../public/cereales.jpg',
     title: 'Cereales',
     subtitle: '$800 c/u',
     text: "Cereales de 1kg c/u",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/fiambrelomo.jpg',
+    image: '/jamonzon-web-page/../public/fiambrelomo.jpg',
     title: 'Fiambre de lomo adobado Sant Dalmai',
     subtitle: '$5000',
     text: "Fiambre de lomo adobado 2.57kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/ham.jpg',
+    image: '/jamonzon-web-page/../public/ham.jpg',
     title: 'Jamon Sant Dalmai',
     subtitle: '$12000',
     text: "Peso: 16lb",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/milk.jpg',
+    image: '/jamonzon-web-page/../public/milk.jpg',
     title: 'Leche entera en polvo',
     subtitle: '$2300',
     text: "Bolsa de leche en polvo de 1kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/olives.jpg',
+    image: '/jamonzon-web-page/../public/olives.jpg',
     title: 'Aceitunas',
     subtitle: '$4000',
     text: "Aceitunas lata de 4kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/quesocheddar.jpg',
+    image: '/jamonzon-web-page/../public/quesocheddar.jpg',
     title: 'Queso Cheddar',
     subtitle: '$6000',
     text: "Queso de 3kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/quesogouda.jpg',
+    image: '/jamonzon-web-page/../public/quesogouda.jpg',
     title: 'Queso Gouda',
     subtitle: '$8000',
     text: "Queso de 3kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/quesogoudarounded.jpg',
+    image: '/jamonzon-web-page/../public/quesogoudarounded.jpg',
     title: 'Queso Gouda',
     subtitle: '$8000',
     text: "Queso de 4kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/quesohollandia.jpg',
+    image: '/jamonzon-web-page/../public/quesohollandia.jpg',
     title: 'Queso Hollandia',
     subtitle: '$7500',
     text: "Queso de 3.5kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/quesomozzarella.jpg',
+    image: '/jamonzon-web-page/../public/quesomozzarella.jpg',
     title: 'Queso Mozzarella',
     subtitle: '$5500',
     text: "Queso de 3kg",
     show: false
   },
   {
-    image: '/ja5903son.github.io/jamonzon-web-page/../public/tomato.jpg',
+    image: '/jamonzon-web-page/../public/tomato.jpg',
     title: 'Pasta de Tomate',
     subtitle: '$3000',
     text: "Lata de Pasta de Tomate de 3kg",
