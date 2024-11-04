@@ -46,7 +46,7 @@ const sendMessage = () => {
 };
 
 const generateMessage = (data) => {
-  return data.map(item => `${item.title} - Precio: ${item.subtitle}`).join('\n');
+  return data.map(cart => `${cart.title} - Precio: ${cart.subtitle}`).join('\n');
 };
 
 const props = defineProps(['cart']);
